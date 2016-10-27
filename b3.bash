@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#selection=
+selection=
 until [ "$selection" = "0" ]; 
 do
     echo ""
