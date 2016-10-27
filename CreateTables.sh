@@ -119,7 +119,7 @@ until [ "$selection" = "B" ]; do
 		Penalty_ID NUMBER,
 		Referee_License_Number NUMBER CHECK (Referee_License_Number BETWEEN 1 AND 9999),
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Reason_for_Penalty VARCHAR(10) NOT NULL,
+		Reason_for_Penalty VARCHAR(20) NOT NULL,
 		Date_Issued VARCHAR(10) NOT NULL,
 		PRIMARY KEY (Penalty_ID),
 		FOREIGN KEY (Referee_License_Number) REFERENCES Referee(Referee_License_Number),
