@@ -1,16 +1,10 @@
 #!/bin/bash
 
-function press_enter
-{
-    echo ""
-    echo -n "Press Enter to continue"
-    read
-    clear
-}
-
-select=
-
-until [ "$selection" = "0" ] do
+MainMenu()  
+[
+    while [ "$CHOICE" != "START" ]
+    do
+        clear
         echo "==========================================================================="
         echo "|                       Soccer League Database                            |"
         echo "|                     CPS510 Section #4 Group #9                          |"
@@ -24,6 +18,7 @@ until [ "$selection" = "0" ] do
         echo " "
         echo " 0) Exit"
         echo " "
-        echo -n "Enter selection: "
-        read selection
-        echo " "
+        echo "Choose: "
+        read CHOICE
+    done
+]
