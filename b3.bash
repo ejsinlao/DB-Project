@@ -1,10 +1,5 @@
 #!/bin/bash
 
-
-
-
-
-
 function press_enter
 {
     echo ""
@@ -12,7 +7,6 @@ function press_enter
     read
     clear
 }
-
 
 selection=
 until [ "$selection" = "0" ]; do
