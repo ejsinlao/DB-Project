@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MainMenu()  
-[
+{
     while [ "$CHOICE" != "START" ]
     do
         clear
@@ -21,4 +21,4 @@ MainMenu()
         echo "Choose: "
         read CHOICE
     done
-]
+}
