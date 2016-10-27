@@ -1,6 +1,6 @@
 #!/bin/bash
 
-selection=
+#selection=
 until [ "$selection" = "0" ]; 
 do
     echo ""
@@ -40,7 +40,7 @@ do
             user=esinlao
             pass=04177544
 
-            sqlplus64 "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
+            sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 
             SELECT Coach_Name, Team_Name
                 FROM Coach, Team, Manages
@@ -57,7 +57,7 @@ do
             user=esinlao
             pass=04177544
 
-            sqlplus64 "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
+            sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 
             SELECT Team_Name, COUNT(Player_ID) AS Number_of_Players
                 FROM Team, Plays_For
@@ -73,7 +73,7 @@ do
             user=esinlao
             pass=04177544
 
-            sqlplus64 "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
+            sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 
             SELECT Player_Name, Goals, Saves
                 FROM Player
@@ -91,7 +91,7 @@ do
             user=esinlao
             pass=04177544
     
-            sqlplus64 "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
+            sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 
             SELECT Team_Name, Player_Name, Contract_Expiration_Date
                 FROM Plays_For, Team, Player
