@@ -13,7 +13,7 @@ do
     echo ""
     echo "0 - exit program"
     echo ""
-    echo -n "Enter selection: "
+    echo -n "Please Enter a Selection: "
     read selection
     echo ""
     case $selection in
@@ -64,6 +64,7 @@ do
                 WHERE Team.Team_ID = Plays_For.Team_ID
                 GROUP BY Team_Name
                 ORDER BY Team_Name ASC;
+
             exit;
             EOF;;
             
