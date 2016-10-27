@@ -2,28 +2,28 @@
 
 selection=
 until [ "$selection" = "0" ]; do
-	echo ""
-	echo "======================================================================"	
-	echo "|						         Querries							   |"
-	echo "|				        CPS510 Section #4, Group #9                    |"
-	echo "|			        Kenny Nguyen, Emmanuel Joshua Sinlao			   |"
-	echo "----------------------------------------------------------------------"
+echo ""
+	echo "==========================================================================="	
+	echo "|                                   Querries                              |"
+	echo "|                        CPS510 Section #4, Group #9                      |"
+	echo "|                    Kenny Nguyen, Emmanuel Joshua Sinlao                 |"
+	echo "---------------------------------------------------------------------------"
 	echo ""	
    	echo "1 ) List all players who play for a certain team and their positions."
-    echo "2 ) List all coaches who coach a certain team."
-    echo "3 ) List all teams and the number of players that play for each team."
-    echo "4 ) List all players who have scored more than 10 goals, and all players who have saved more than 10 goals."
-    echo "5 ) List all penalties a player received, the reason, the date, and the referee who issued the penalty."
+	echo "2 ) List all coaches who coach a certain team."
+    	echo "3 ) List all teams and the number of players that play for each team."
+    	echo "4 ) List all players who have scored more than 10 goals, and all players who have saved more than 10 goals."
+   	echo "5 ) List all penalties a player received, the reason, the date, and the referee who issued the penalty."
 	echo "6 ) List all players from a certain team and their contract expiration dates."
 	echo "7 ) Find the average and maximum amount of goals scored, and goals saved."
 	echo "8 ) List all winners in preivous seasons of the league."
 	echo ""
-    echo "0 ) Exit."
-    echo ""
-    echo -n "Enter selection: "
-    read selection
-    echo ""
-    case $selection in
+   	echo "0 ) Exit."
+    	echo ""
+    	echo -n "Enter selection: "
+    	read selection
+   	echo ""
+   	case $selection in
 
 	1 ) 
 
