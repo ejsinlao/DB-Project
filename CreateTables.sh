@@ -42,8 +42,8 @@ until [ "$selection" = "B" ]; do
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 		CREATE TABLE Team (
 		Team_ID NUMBER CHECK (Team_ID BETWEEN 1 AND 9999),
-		Team_Name VARCHAR (10) NOT NULL,
-		Nationality VARCHAR(10) NOT NULL,
+		Team_Name VARCHAR (20) NOT NULL,
+		Nationality VARCHAR(20) NOT NULL,
 		Wins NUMBER DEFAULT 0,
 		Losses NUMBER DEFAULT 0,
 		Draws NUMBER DEFAULT 0,
@@ -58,17 +58,17 @@ until [ "$selection" = "B" ]; do
 		Match_ID NUMBER CHECK (Match_ID BETWEEN 1 AND 9999),
 		Start_Date VARCHAR2(10) NOT NULL,
 		Time_Taken NUMBER NOT NULL,
-		Venue VARCHAR2(10) NOT NULL,
+		Venue VARCHAR2(20) NOT NULL,
 		PRIMARY KEY (Match_ID));
 		
 		CREATE TABLE Referee (
 		Referee_License_Number NUMBER CHECK (Referee_License_Number BETWEEN 1 AND 9999),
-		Referee_Name VARCHAR2 (10) NOT NULL,
+		Referee_Name VARCHAR2 (20) NOT NULL,
 		PRIMARY KEY (Referee_License_Number));
 		
 		CREATE TABLE Coach (
 		Coach_License_Number NUMBER CHECK (Coach_License_Number BETWEEN 1 AND 9999),
-		Coach_Name VARCHAR2 (10) NOT NULL,
+		Coach_Name VARCHAR2 (20) NOT NULL,
 		PRIMARY KEY (Coach_License_Number));
 		
 		CREATE TABLE Roster (
@@ -77,10 +77,10 @@ until [ "$selection" = "B" ]; do
 		
 		CREATE TABLE Player (
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Player_Name VARCHAR(10) NOT NULL,
+		Player_Name VARCHAR(20) NOT NULL,
 		Jersey_Number NUMBER DEFAULT NULL,
-		Nationality VARCHAR(10) NOT NULL,
-		Position VARCHAR(10) DEFAULT NULL,
+		Nationality VARCHAR(20) NOT NULL,
+		Position VARCHAR(20) DEFAULT NULL,
 		Goals NUMBER DEFAULT 0,
 		Saves NUMBER DEFAULT 0,
 		Assists NUMBER DEFAULT 0,
@@ -90,7 +90,7 @@ until [ "$selection" = "B" ]; do
 		CREATE TABLE Awards (
 		Season_Date VARCHAR(15),
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Type_of_Award VARCHAR(10) NOT NULL,
+		Type_of_Award VARCHAR(20) NOT NULL,
 		PRIMARY KEY (Season_Date, Player_ID));
 
 		CREATE TABLE Plays_In (
@@ -142,8 +142,8 @@ EOF
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 		CREATE TABLE Team (
 		Team_ID NUMBER CHECK (Team_ID BETWEEN 1 AND 9999),
-		Team_Name VARCHAR (10) NOT NULL,
-		Nationality VARCHAR(10) NOT NULL,
+		Team_Name VARCHAR (20) NOT NULL,
+		Nationality VARCHAR(20) NOT NULL,
 		Wins NUMBER DEFAULT 0,
 		Losses NUMBER DEFAULT 0,
 		Draws NUMBER DEFAULT 0,
@@ -178,7 +178,7 @@ EOF
 		Match_ID NUMBER CHECK (Match_ID BETWEEN 1 AND 9999),
 		Start_Date VARCHAR2(10) NOT NULL,
 		Time_Taken NUMBER NOT NULL,
-		Venue VARCHAR2(10) NOT NULL,
+		Venue VARCHAR2(20) NOT NULL,
 		PRIMARY KEY (Match_ID));
 exit;
 EOF
@@ -193,7 +193,7 @@ EOF
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 		CREATE TABLE Referee (
 		Referee_License_Number NUMBER CHECK (Referee_License_Number BETWEEN 1 AND 9999),
-		Referee_Name VARCHAR2 (10) NOT NULL,
+		Referee_Name VARCHAR2 (20) NOT NULL,
 		PRIMARY KEY (Referee_License_Number));
 exit;
 EOF
@@ -208,7 +208,7 @@ EOF
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 		CREATE TABLE Coach (
 		Coach_License_Number NUMBER CHECK (Coach_License_Number BETWEEN 1 AND 9999),
-		Coach_Name VARCHAR2 (10) NOT NULL,
+		Coach_Name VARCHAR2 (20) NOT NULL,
 		PRIMARY KEY (Coach_License_Number));
 exit;
 EOF
@@ -237,10 +237,10 @@ EOF
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
 		CREATE TABLE Player (
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Player_Name VARCHAR(10) NOT NULL,
+		Player_Name VARCHAR(20) NOT NULL,
 		Jersey_Number NUMBER DEFAULT NULL,
-		Nationality VARCHAR(10) NOT NULL,
-		Position VARCHAR(10) DEFAULT NULL,
+		Nationality VARCHAR(20) NOT NULL,
+		Position VARCHAR(20) DEFAULT NULL,
 		Goals NUMBER DEFAULT 0,
 		Saves NUMBER DEFAULT 0,
 		Assists NUMBER DEFAULT 0,
@@ -260,7 +260,7 @@ EOF
 		CREATE TABLE Awards (
 		Season_Date VARCHAR(15),
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Type_of_Award VARCHAR(10) NOT NULL,
+		Type_of_Award VARCHAR(20) NOT NULL,
 		PRIMARY KEY (Season_Date, Player_ID));
 exit;
 EOF
@@ -329,7 +329,7 @@ EOF
 		Penalty_ID NUMBER,
 		Referee_License_Number NUMBER CHECK (Referee_License_Number BETWEEN 1 AND 9999),
 		Player_ID NUMBER CHECK (Player_ID BETWEEN 1 AND 9999),
-		Reason_for_Penalty VARCHAR(10) NOT NULL,
+		Reason_for_Penalty VARCHAR(20) NOT NULL,
 		Date_Issued VARCHAR(10) NOT NULL,
 		PRIMARY KEY (Penalty_ID),
 		FOREIGN KEY (Referee_License_Number) REFERENCES Referee(Referee_License_Number),
