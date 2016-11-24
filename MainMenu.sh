@@ -14,6 +14,7 @@ until [ "$selection" = "1" ] || [ "$selection" = "2" ] || [ "$selection" = "3" ]
 	echo "2 ) Create Tables"
 	echo "3 ) Populate Tables"
 	echo "4 ) Query Tables"
+	echo "5 ) View Tables"
     echo ""
     echo "E ) Exit"
     echo ""
@@ -38,7 +39,9 @@ until [ "$selection" = "1" ] || [ "$selection" = "2" ] || [ "$selection" = "3" ]
 	4)	clear
 		sh QueryTables.sh
 		;;
-
+	5) 	clear
+		sh ViewTables.sh
+		;;
     E ) clear 
 		echo "Exiting..."
 		echo ""

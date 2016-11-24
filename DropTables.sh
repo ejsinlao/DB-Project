@@ -11,9 +11,8 @@ until [ "$selection" = "B" ]; do
 	echo "----------------------------------------------------------------------"
 	echo ""	
 	echo "A ) Automatically Drop ALL Tables"
-	echo "M ) Manually enter a table to drop"
+	echo "1 ) Manually enter a table to drop"
 	echo ""
-	echo "1 ) Drop Chooses Table"
 	echo "2 ) Drop Penalizes Table"
 	echo "3 ) Drop Manages Table"
     echo "4 ) Drop Plays_For Table"
@@ -41,7 +40,6 @@ until [ "$selection" = "B" ]; do
 		pass=04177544
 
 		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-		DROP TABLE Chooses;
 		DROP TABLE Penalizes;
 		DROP TABLE Manages;
 		DROP TABLE Plays_For;
@@ -57,7 +55,7 @@ until [ "$selection" = "B" ]; do
 exit;
 EOF
                                                 ;;  
-    M ) echo -n "Please enter a valid table: "
+    1 ) echo -n "Please enter a valid table: "
 		read table
 		clear
 		export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
@@ -71,18 +69,7 @@ exit;
 EOF
                                                 ;;
     
-    1 ) clear
-		export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
-
-		user=esinlao
-		pass=04177544
-
-		sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-		DROP TABLE Chooses;
-exit;
-EOF
-                                                ;;     
-    
+      
     2 ) clear
 		export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
 

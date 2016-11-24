@@ -18,20 +18,19 @@ until [ "$selection" = "B" ]; do
         echo "6 ) Roster"
         echo "7 ) Player"
         echo "8 ) Plays in"
-        echo "9 ) Plays  for"
-        echo "10 ) Manages"
-        echo "11) Penalizes"
-        echo "12 ) Chooses"
-        echo ""
+	echo "9 ) Plays  for"
+	echo "10 ) Manages"
+	echo "11) Penalizes"
+	echo ""
     echo "B ) Back"
     echo ""
     echo -n "Please select a view: "
     read selection
     echo ""
     case $selection in
- 1 )
+  1 )
 
-
+        
 
         export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
 
@@ -40,7 +39,7 @@ until [ "$selection" = "B" ]; do
 
         sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
         SELECT *
-        FROM Season;
+	FROM Season;
 exit;
 EOF
                                                 ;;
@@ -52,7 +51,7 @@ EOF
         user=esinlao
         pass=04177544
  sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-        Select *
+	Select * 
 from  Match;
 exit;
 EOF
@@ -66,12 +65,12 @@ EOF
         pass=04177544
 
         sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-        Select * from Referee;
+	Select * from Referee;
 exit;
 EOF
                                                 ;;
  4 )
-
+        
 
         export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
 
@@ -79,7 +78,7 @@ EOF
         pass=04177544
 
         sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-        Select * from Coach;
+     	Select * from Coach;
 exit;
 EOF
                                                 ;;
@@ -94,8 +93,8 @@ EOF
 exit;
 EOF
                                                 ;;
- 6 )
-
+  6 )
+        
 
         export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
 
@@ -106,7 +105,7 @@ EOF
 exit;
 EOF
                                                 ;;
-7 )
+  7 )
 
        export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
         clear
@@ -114,13 +113,13 @@ EOF
         pass=04177544
 
         sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-
+        
         Select * from Player;
 EOF
                                                 ;;
- 8 )
+  8 )
 
-
+        
         export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
         clear
         user=esinlao
@@ -131,6 +130,10 @@ EOF
 exit;
 EOF
                                                 ;;
+
+
+
+
  9 )
 
 
@@ -144,6 +147,7 @@ EOF
 exit;
 EOF
                                                 ;;
+ 
  10 )
 
 
@@ -170,24 +174,14 @@ EOF
 exit;
 EOF
                                                 ;;
-12 )
 
 
-        export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib
-        clear
-        user=esinlao
-        pass=04177544
 
-        sqlplus64 -s "$user/$pass@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(Host=141.117.57.159)(Port=1521))(CONNECT_DATA=(SID=orcl)))" <<EOF
-        Select * from Chooses;
-exit;
-EOF
-                                                ;;
- B ) clear
+  B ) clear
                  sh MainMenu.sh
                  ;;
 
         * ) clear
-                        echo "Invalid . Please try again."
+                        echo "Invalid query. Please try again."
     esac
 done
